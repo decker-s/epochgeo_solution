@@ -23,6 +23,8 @@ def load_from_csv(csv_path):
     with open(csv_path, 'r') as csv_file:
         csv_reader = csv.reader(csv_file)
         for row in csv_reader:
+            # map can be used here to easily convert the individual values of the tuple into floats
+            # then returns an iterable object which we can use to easily assign our x and y.
             x, y = map(float, row)
             points.append((x, y))
     return points
