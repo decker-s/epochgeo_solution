@@ -3,6 +3,20 @@ To run this on your machine (assuming linux ubuntu) it should be pretty simple a
 I was about to write a guide to setting up a venv and pip installing required modules, but then realized that obviously the ones I used (math, random, time, csv, unittest)
 come standard with python! Should work using the "speedup" test below as well as using $python examples/simple_example.py or $python3 examples/simple_example.py.
 
+Running inside of my vm (8192MB 3600MHz of memory 8 CPUs allocated on a 10850k @ 3.6GHz) i get a slow time of 0.84sec, new time of 0.01sec, and a speedup of 127.97x. 
+
+Time complexity of original solution is O(mn) m being the number of queries and n being the number of points. My solution has a build time of O(nlogn) versus the originals O(1),
+and a query time of O(m(logm)^2) for m queries.
+
+Same space complexity for both: O(n).
+
+References for time and space complexity:
+
+https://johnlekberg.com/blog/2020-04-17-kd-tree.html
+https://miro.medium.com/v2/resize:fit:1200/1*5ZLci3SuR0zM_QlZOADv8Q.jpeg gives a good representation of this but I am sure you are all familiar. 
+
+
+
 
 # Developer Exercise
 
