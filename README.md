@@ -13,9 +13,8 @@ Same space complexity for both: O(n).
 References for time and space complexity:
 
 https://johnlekberg.com/blog/2020-04-17-kd-tree.html
+
 https://miro.medium.com/v2/resize:fit:1200/1*5ZLci3SuR0zM_QlZOADv8Q.jpeg gives a good representation of this but I am sure you are all familiar. 
-
-
 
 
 # Developer Exercise
