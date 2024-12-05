@@ -16,6 +16,17 @@ references used:
     
     As does https://upload.wikimedia.org/wikipedia/commons/9/9c/KDTree-animation.gif 
         (found from https://stackoverflow.com/questions/1627305/nearest-neighbor-k-d-tree-wikipedia-proof)
+        
+"""
+
+
+"""
+Example usage for this class:
+    points = [(1, 2), (3, 4), (5, 6)]
+    index = NearestNeighborIndex(points)
+    query_point = (4, 5)
+    nearest = index.find_nearest(query_point)
+    print(f"nearest point to {query_point} is {nearest}")
 """
 
 class NearestNeighborIndex:
@@ -117,7 +128,7 @@ class NearestNeighborIndex:
         return math.sqrt(deltax * deltax + deltay * deltay)
 
 
-    def find_nearest_fast(self, query_point):
+    def find_nearest(self, query_point):
         if not self.root:
             return None
 
@@ -144,7 +155,4 @@ class NearestNeighborIndex:
                 min_point = point
 
         return min_point
-
-    def find_nearest(self, query_point):
-        return self.find_nearest_fast(query_point)
 
