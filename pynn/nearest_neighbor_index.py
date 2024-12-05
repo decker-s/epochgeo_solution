@@ -1,5 +1,23 @@
 import math
 
+"""
+references used:
+    https://johnlekberg.com/blog/2020-04-17-kd-tree.html: for actual implementation
+    wikipedia: https://en.wikipedia.org/wiki/Nearest_neighbor_search (specifically the section on space partitioning
+    
+    I chose this algorithm because it seemed to be a quick way to query data that did not need to be rebuilt too often
+    quickly. This was based off of the wikipedia page. Considering the application could vary a lot, this may result in 
+    slowdown depending on application. Geospatial data with millions of people moving that needs to be updated on the 
+    hour? Probably going to perform badly. Vehicles, tanks, ships, etc moving but everything else staying the same? Will 
+    perform very well. 
+    
+    https://en.wikipedia.org/wiki/K-d_tree has an interesting video that may help understand 
+        https://en.wikipedia.org/wiki/File:Kdtreeogg.ogv
+    
+    As does https://upload.wikimedia.org/wikipedia/commons/9/9c/KDTree-animation.gif 
+        (found from https://stackoverflow.com/questions/1627305/nearest-neighbor-k-d-tree-wikipedia-proof)
+"""
+
 class NearestNeighborIndex:
     class KDNode:
         def __init__(self, point, left=None, right=None):
@@ -34,10 +52,10 @@ class NearestNeighborIndex:
         # determines axis to split along depending on depth of recursion (alternates splitting x and y)
         axis = depth % 2
 
-        # sorts points based off of the current axis, depth 0 is x, depth 1 is y, depth 2 is x, depth 3 is y, etc..
+        # sorts points based off of the current axis, depth 0 is x, depth 1 is y
         points.sort(key=lambda x: x[axis])
 
-        # find median point after sorting which splits data into two (rougly) equal (sub)sets
+        # find median point after sorting which splits data into two (roughly) equal (sub)sets
         median = len(points) // 2
 
         # creation of a new node. the median now becomes the root at this level of the tree.
