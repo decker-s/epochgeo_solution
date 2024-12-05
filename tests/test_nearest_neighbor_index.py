@@ -82,7 +82,7 @@ class NearestNeighborIndexTest(unittest.TestCase):
         uut = NearestNeighborIndex(updates)
         self.assertEqual((13, 13), uut.find_nearest((13, 14)))
 
-        # update by removing a point
+        # update by removing two points
         updated_list = [(12, 12), (23, 23)]
         uut = NearestNeighborIndex(updated_list)
         self.assertEqual((23, 23), uut.find_nearest((19, 19)))
