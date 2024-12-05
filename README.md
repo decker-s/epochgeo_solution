@@ -1,3 +1,8 @@
+# Couple of Jacob comments
+To run this on your machine (assuming linux ubuntu) it should be pretty simple as it only relies on the csv and math libraries in addition to the ones provided.
+I was about to write a guide to setting up a venv and pip installing required modules, but then realized that obviously the ones I used (math, random, time, csv, unittest)
+come standard with python! Should work using the "speedup" test below as well as using $python examples/simple_example.py or $python3 examples/simple_example.py.
+
 
 # Developer Exercise
 
